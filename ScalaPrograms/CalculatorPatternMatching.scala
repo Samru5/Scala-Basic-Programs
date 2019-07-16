@@ -61,4 +61,14 @@ object CalculatorPatternMatching extends App {
     case _ => println("Invalid choice") //underscore means anything
 
   }
+  
+  //Eg-2
+  
+  def data(s:String):String=s match{
+    case "Hello" =>"Hello"
+    case "Hi" =>"Hi"
+    case _ =>"Not valid"
+  }
+println(data("Hello123"))
+
 }

@@ -31,3 +31,20 @@ catch{
     println("File not found!!"+ex)
     println("File not found!!"+ex.getMessage)
 }
+
+or
+
+try {
+    val result = 12 / 0
+  }
+  catch {
+    //case e: ArithmeticException => println("It is an arithmetic exception" + e)
+    //case e: ArithmeticException => println("It is an arithmetic exception" + e.getCause)
+    case e: ArithmeticException => println("It is an arithmetic exception" + e.getMessage)
+
+
+    case ex: Exception => println(ex)
+    case ex: ArithmeticException => println(ex.getCause)
+    case ex: ArithmeticException => println(ex.getMessage)
+
+  }

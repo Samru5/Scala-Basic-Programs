@@ -48,3 +48,62 @@ try {
     case ex: ArithmeticException => println(ex.getMessage)
 
   }
+  
+  or
+  
+  import java.io.FileNotFoundException
+
+import scala.io.Source
+import scala.util.{Failure, Success, Try}
+
+object Exception_Handling extends App{
+
+  //Eg-1:-try,catch
+  try{
+    val result=53/0
+  }
+  catch{
+
+    case e:ArithmeticException =>println("Exception Occured!"+e)
+      println("Exception Occured!"+e.getMessage)
+      println("Exception Occured!"+e.getCause)
+
+    case ex:Exception =>println("Exception is-"+ex)
+  }
+
+//Eg-2:-try,catch,finally
+  try{
+    val myFile=Source.fromFile("C:/Users/sashetye/demo/Colours1.txt")
+
+  }
+
+  catch{
+    case e:FileNotFoundException =>println("Exception-"+e)
+    case ex:Exception =>println("Excption is-"+ex)
+  }
+
+  finally {
+    println("Program is over")
+  }
+
+  //Eg-3:-Try,Success,Failure
+
+  val data=4/2
+  val ans=Try(data)
+
+  ans match{
+    case Success(s) =>println(s)
+    case Failure(f) =>println(f)
+  }
+
+  //Eg-4:-Try,Success,Failure
+  val input=Try(Source.fromFile("C:/Users/sashetye/demo/Colours2.txt"))
+
+  input match{
+    case Success(s) =>println(s)
+    case Failure(f) =>println(f)
+  }
+
+
+}
+

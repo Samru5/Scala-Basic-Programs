@@ -1,0 +1,34 @@
+
+object Option_Example extends App{
+
+  //Eg-1
+  val some:Option[Int]=Some(15)
+  val none:Option[Int]=None
+
+  val x=some.getOrElse("Not found value of x")
+  val y=none.getOrElse("Not found value of y")
+
+  println(x)
+  println(y)
+
+  //Eg-2
+  def check(name:String)= name match{
+    case "John" =>println("John")
+    case _ =>println("Other")
+  }
+  check("John")
+  check("Seema")
+
+  //Eg-3
+  def info(name:Option[String])=name match{
+    case Some(s) =>println(s)
+    case None =>println("Not valid name")
+  }
+  val students=Map(1 ->"Alex",2 ->"Benny")
+  println(students.get(2))
+  println(students.get(2).get)    //removes Some() & only prints name
+
+  println(students.get(6))
+
+
+}

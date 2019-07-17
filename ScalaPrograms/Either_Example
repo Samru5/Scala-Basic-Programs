@@ -1,0 +1,26 @@
+object Either_Example  extends App{
+
+  def division(q:Int,r:Int):Either[String,Int]={
+
+    if(q==0)
+      Left("Division is not possible")
+    else
+      Right(q/r)
+  }
+
+  val result=division(10,5)
+
+  result match{
+    case Left(l) =>println("Left "+l)
+    case Right(r) =>println("Right "+r)
+
+  }
+
+  val result1=division(0,3)
+
+  result1 match{
+    case Left(l) =>println("Left "+l)
+    case Right(r) =>println("Right "+r)
+
+  }
+}

@@ -45,6 +45,27 @@ object demo extends App{
   println("Salary -"+emp3.salary)
 }
 
+or
+
+object Case_Class_Example extends App {
+
+  case class Employee(name:String,salary:Float)
+
+  val emp1=Employee("John",45000)
+  val emp2=Employee("Alex",2000)
+  println(emp1)
+  println(emp2)
+
+  val emp3=emp1.copy()
+  println(emp3)
+
+  val emp4=emp1.copy(name="Seema")
+  println(emp4)
+
+  println(emp1==emp3)
+  println(emp1.equals(emp3))
+
+}
 
 
 

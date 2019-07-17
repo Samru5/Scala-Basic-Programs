@@ -1,0 +1,42 @@
+package main
+
+object Pattern_Matching extends App {
+
+  //Eg-1
+  val data = "My Program"
+
+  data match {
+    case "My Program" => println("Matched")
+    case _ => println("Not Matched")
+  }
+
+  //Eg-2
+  val result = 10 / 5
+
+  result match {
+    case 1 => println("Qoutient is 1")
+    case 2 => println("Qoutient is 2")
+    case 3 => println("Qoutient is 3")
+    case _ => println("Other")
+
+  }
+
+  //Eg-3:-Using regex pattern
+
+  val pattern = "[0-9]+".r
+  val address = "102 Mumbai Tilak Road 675"
+  val d = pattern.findFirstIn(address)
+  d.foreach(println)
+  val s = pattern.findAllIn(address)
+  s.foreach(println)
+  val pattern1 = "[0-9]".r
+  val f = pattern1.replaceFirstIn(address, "X")
+  println(f)
+
+  val m = pattern1.replaceAllIn(address, "Y")
+  println(m)
+
+  val pattern3="H".r
+  val output=pattern3.replaceAllIn("Hello World","J")
+  println(output)
+}

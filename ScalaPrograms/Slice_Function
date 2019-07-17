@@ -1,0 +1,18 @@
+
+object Slice_Function extends App {
+
+  val marksArray = Array(56, 79, 60, 99, 71)
+  println(marksArray.slice(0,3).deep)  //starts from 0 and ends at  n-1 so 3-1=2
+
+  println(marksArray.slice(-3,2).deep)  //If we give -ve values, it just starts with available index
+
+  println(marksArray.slice(1,2).deep)
+
+  println(marksArray.slice(2,2).deep)
+
+  val str = "Hello I'm doing good. How are you?"
+  println(str.substring(0,4))   //similar to println(str.slice(0,4))
+  println(str(3))
+
+
+}
